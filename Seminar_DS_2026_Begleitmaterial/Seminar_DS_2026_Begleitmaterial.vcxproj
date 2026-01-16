@@ -140,9 +140,6 @@
     <None Include="Exercise_03_STL_Phonebook.md" />
     <None Include="Exercise_04_constexpr.md" />
     <None Include="Exercise_05_Returning_UniquePtr.md" />
-    <None Include="_Exercises_03_STL.md" />
-    <None Include="_Exercises_14_ConstExpr.md" />
-    <None Include="_Exercises_15_SmartPointers.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScopedTimer.h" />

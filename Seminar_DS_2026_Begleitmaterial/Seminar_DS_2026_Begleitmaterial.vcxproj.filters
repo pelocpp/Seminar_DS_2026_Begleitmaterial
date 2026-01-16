@@ -35,15 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="_Exercises_03_STL.md">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="_Exercises_14_ConstExpr.md">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="_Exercises_15_SmartPointers.md">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="..\Readme.md" />
     <None Include="Exercise_01_Smart_Pointer.md">
       <Filter>Resource Files</Filter>
