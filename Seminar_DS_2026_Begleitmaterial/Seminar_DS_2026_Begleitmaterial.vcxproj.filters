@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Exercise_01_Smart_Pointer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercise_02_STL_Erase_Remove.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercise_03_STL_Phonebook.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercise_04_constexpr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercise_05_Returning_UniquePtr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="_Exercises_03_STL.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_Exercises_14_ConstExpr.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="_Exercises_15_SmartPointers.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\Readme.md" />
+    <None Include="Exercise_01_Smart_Pointer.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Exercise_02_STL_Erase_Remove.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Exercise_03_STL_Phonebook.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Exercise_04_constexpr.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Exercise_05_Returning_UniquePtr.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cpp_exercise_my_string.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ScopedTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
