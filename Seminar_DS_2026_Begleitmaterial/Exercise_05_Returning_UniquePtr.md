@@ -8,6 +8,8 @@
 
 ### Voraussetzungen: `std::unique_ptr<>`, bei Bedarf `std::tuple<>` und `std::optional`
 
+## Einführung
+
 In dieser Aufgabe wollen wir ein `std::unique_ptr<>`-Objekt in einem Unterprogramm (Funktion, Methode) anlegen.
 Es sollen verschiedene Wege aufgezeigt und bewertet werden, wie diese `std::unique_ptr<>`-Variable aus dem Unterprogramm
 zurückgegeben werden kann.
@@ -26,8 +28,10 @@ die Adresse ist aber &ndash; ganz konform zu Modern C++ &ndash; durch ein `std::
   * Welche Möglichkeiten gibt es, das `std::unique_ptr<>`-Objekt aus der Funktion zurückzugeben?
 
   * Welche Vorteile hat es, mit einem `std::unique_ptr<std::size_t[]>`-Objekt anstatt mit einem `std::size_t*`-Zeiger zu arbeiten?
+ 
+## Weitere Hinweise
 
-Beachten Sie dabei, dass neben dem Zeiger auch die Anzahl der Ziffern in einer zweiten Variablen zurückgegeben werden soll.
+Beachten Sie generell in Ihrer Realisierung, dass neben dem Zeiger auch die Anzahl der Ziffern in einer zweiten Variablen zurückgegeben werden soll.
 Und zu guter Letzt soll auch noch eine boolsche Variable zurückgeliefert werden, die angibt,
 ob die Funktion `splitToDigits` in ihrer Funktionsweise korrekt gearbeitet hat oder nicht.
 Die Berechnung des Ergebnisses stellt hier weniger das Problem dar,
@@ -35,37 +39,37 @@ aber die interne Speicherplatzanforderung mit `new` muss nicht immer funktionier
 Ein Wert von `true` bedeutet, dass der Speicherbereich und die Längenangabe eine korrekte Zerlegung der Zahl darstellen,
 in allen anderen Fällen wird `false` zurückgeben.
 
+## Mehrere Möglichkeiten der Umsetzung
+
 Um Ihnen eine kleine Hilfestellung zu geben, folgen hier einige Hinweise für die Spezifikation der `splitToDigits`-Funktion:
 
   * Liefere direkt ein `std::unique_ptr<>`-Objekt zurück (Verschiebe-Semantik oder *Copy-Move-Elision* hinter den Kulissen).
-  * Liefere eine Strukturvariable zurück (klassische Herangehensweise, im Prinzip der zu favorisierende Ansatz).
-  * Liefere ein `std::tuple`-Objekt zurück (moderne, leichtgewichtige Herangehensweise, Lesbarkeit nicht ganz so gut).
-  * Verwende Rückgabewert und eine Menge an Out-Parametern (*Call-by-Reference* &ndash; ähnlich wie die Variante mit Strukturvariablen zu bewerten).
-  * Liefere ein `std::pair` zurück (wenn es kompakt sein soll und man mit zwei Werten auskommt).
-  * Rückgabe mit Hilfe von `std::optional` und `std::pair` (interessant, wenn nicht immer ein Ergebnis vorliegen muss).
+  * Oder: Liefere eine Strukturvariable zurück (klassische Herangehensweise, im Prinzip der zu favorisierende Ansatz).
+  * Oder: Liefere ein `std::tuple`-Objekt zurück (moderne, leichtgewichtige Herangehensweise, Lesbarkeit nicht ganz so gut).
+  * Oder: Verwende Rückgabewert und eine Menge an *Out*-Parametern (*Call-by-Reference* &ndash; ähnlich wie die Variante mit Strukturvariablen zu bewerten).
+  * Oder: Liefere ein `std::pair` zurück (wenn es kompakt sein soll und man mit zwei Werten auskommt).
+  * Oder: Rückgabe mit Hilfe von `std::optional` und `std::pair` (interessant, wenn nicht immer ein Ergebnis vorliegen muss).
 
 *Beispiel*:
 
+Wählt man für die Umsetzung den Weg mit der Rückgabe einer Strukturvariable,
+dann könnte das Hauptprogramm so aussehen:
+
 ```cpp
-01: void test()
+01: struct DigitsSplitting
 02: {
-03:     // pass all parameters by reference
-04:     std::size_t number{ 54321 };
-05:     std::size_t count{};
-06:     std::unique_ptr<std::size_t[]> buffer{};
-07: 
-08:     bool success { splitToDigitsByRef(number, buffer, count) };
+03:     // TBD
+04: };
+05: 
+06: void test()
+07: {
+08:     DigitsSplitting splitting{ splitToDigits(12345) };
 09: 
-10:     if (success) {
-11:         std::span<size_t> digits{ buffer.get(), count };
-12: 
-13:         std::println("Splitting of {}:", number);
-14:         for (std::size_t i{}; auto digit : digits) {
-15:             std::println("{}: {}", i, digit);
-16:             ++i;
-17:         }
-18:     }
-19: }
+10:     if (splitting.m_success) {
+11: 
+12:         // extract elements of struct DigitsSplitting
+13:     }
+14: }
 ```
 
 *Ausgabe*:
@@ -78,5 +82,34 @@ Splitting of 12345:
 3: 4
 4: 5
 ```
+
+Wählt man hingegen für die Umsetzung den Weg mit der Rückgabe eines `bool`-Werts
+und übergibt für alle weiteren Rückgabeparameter Referenzen an die `splitToDigits`-Funktion,
+so könnte der Testrahmen wie folgt aussehen:
+
+
+```cpp
+01: void test()
+02: {
+03:     // pass all parameters by reference
+04:     std::size_t number{ 12345 };
+05:     std::size_t count{};
+06:     std::unique_ptr<std::size_t[]> buffer{};
+07: 
+08:     bool success{ splitToDigitsByRef(number, buffer, count) };
+09: 
+10:     if (success) {
+11:         // print results to the console
+12:     }
+13: }
+```
+
+---
+
+[Lösung](Exercise_05_Returning_UniquePtr.cpp)
+
+---
+
+[Zurück](../Readme.md)
 
 ---

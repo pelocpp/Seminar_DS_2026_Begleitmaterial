@@ -8,6 +8,8 @@
 
 ### Voraussetzungen: `std::unique_ptr<>` und `std::shared_ptr<>`
 
+## Einführung
+
 In dieser Aufgabe gehen wir auf den Gebrauch eines Smartpointers als Membervariable einer Klasse ein.
 
 Schreiben Sie eine Klasse `MyString`,
@@ -88,5 +90,13 @@ Welche Methoden/Operatoren muss die Klasse `MyString` bereitstellen,
 so dass deren Objekte auch verschoben werden können.
 
 Zeigen Sie das Verschieben an entsprechenden Beispielen auf.
+
+---
+
+[Lösung](Exercise_01_Smart_Pointer.cpp)
+
+---
+
+[Zurück](../Readme.md)
 
 ---

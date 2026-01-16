@@ -8,6 +8,8 @@
 
 ### Voraussetzungen: `constexpr`, Lambdas und teilweise Templates
 
+## Einführung
+
 Schreiben Sie eine Funktion `maximum`, die zu drei vorgegebenen Zahlen die größte Zahl ermittelt und als Rückgabewert zurückliefert.
 Natürlich kommen hier `if`-Anweisungen ins Spiel, es gibt aber durchaus mehrere Möglichkeiten, das Ziel zu erreichen.
 
@@ -38,5 +40,13 @@ constexpr auto result = maximum(1, 2, 3);
 
 Welche unterschiedlichen Möglichkeiten gibt es in der Deklaration der Schnittstelle der `maximum`-Funktion?
 Diskutieren bzw. erläutern Sie die Unterschiede der jeweiligen Deklaration.
+
+---
+
+[Lösung](Exercise_04_constexpr.cpp)
+
+---
+
+[Zurück](../Readme.md)
 
 ---
