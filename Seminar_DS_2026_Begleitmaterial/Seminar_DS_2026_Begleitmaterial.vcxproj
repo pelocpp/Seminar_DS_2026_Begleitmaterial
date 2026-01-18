@@ -128,18 +128,22 @@
     <ClCompile Include="Exercise_01_Smart_Pointer.cpp" />
     <ClCompile Include="Exercise_02_STL_Erase_Remove.cpp" />
     <ClCompile Include="Exercise_03_STL_Phonebook.cpp" />
-    <ClCompile Include="Exercise_04_constexpr.cpp" />
+    <ClCompile Include="Exercise_04_constexpr_maximum.cpp" />
     <ClCompile Include="Exercise_05_Returning_UniquePtr.cpp" />
+    <ClCompile Include="Exercise_06_constexpr_rgb.cpp" />
     <ClCompile Include="Program.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Readme.md" />
     <None Include="cpp_exercise_my_string.svg" />
+    <None Include="cpp_hash_table_phonebook.svg" />
+    <None Include="cpp_vector_phonebook.svg" />
     <None Include="Exercise_01_Smart_Pointer.md" />
     <None Include="Exercise_02_STL_Erase_Remove.md" />
     <None Include="Exercise_03_STL_Phonebook.md" />
-    <None Include="Exercise_04_constexpr.md" />
+    <None Include="Exercise_04_constexpr_maximum.md" />
     <None Include="Exercise_05_Returning_UniquePtr.md" />
+    <None Include="Exercise_06_constexpr_rgb.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ScopedTimer.h" />

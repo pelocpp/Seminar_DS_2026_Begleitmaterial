@@ -43,7 +43,7 @@ Diskutieren bzw. erläutern Sie die Unterschiede der jeweiligen Deklaration.
 
 ---
 
-[Lösung](Exercise_04_constexpr.cpp)
+[Lösung](Exercise_04_constexpr_maximum.cpp)
 
 ---
 

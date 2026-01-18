@@ -24,13 +24,16 @@
     <ClCompile Include="Exercise_03_STL_Phonebook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercise_04_constexpr.cpp">
+    <ClCompile Include="Exercise_04_constexpr_maximum.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Exercise_05_Returning_UniquePtr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Program.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercise_06_constexpr_rgb.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,13 +48,22 @@
     <None Include="Exercise_03_STL_Phonebook.md">
       <Filter>Resource Files</Filter>
     </None>
-    <None Include="Exercise_04_constexpr.md">
+    <None Include="Exercise_04_constexpr_maximum.md">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="Exercise_05_Returning_UniquePtr.md">
       <Filter>Resource Files</Filter>
     </None>
     <None Include="cpp_exercise_my_string.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Exercise_06_constexpr_rgb.md">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cpp_vector_phonebook.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="cpp_hash_table_phonebook.svg">
       <Filter>Resource Files</Filter>
     </None>
   </ItemGroup>

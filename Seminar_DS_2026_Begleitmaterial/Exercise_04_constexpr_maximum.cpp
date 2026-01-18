@@ -1,5 +1,5 @@
 // =====================================================================================
-// Exercise_04_constexpr.cpp
+// Exercise_04_constexpr_maximum.cpp
 // =====================================================================================
 
 namespace Exercise_ConstExpr {
@@ -139,7 +139,7 @@ namespace Exercise_ConstExpr {
     }
 }
 
-void test_exercises_constexpr()
+void test_exercises_constexpr_maximum()
 {
     using namespace Exercise_ConstExpr;
 
