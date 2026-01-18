@@ -21,7 +21,7 @@ Folgende Aspekte werden betrachtet:
   * Anwendung eines sequentiellen oder assoziativen STL-Containers (`std::vector` oder `std::unordered_map`).
   * Anwendung elementarer STL Algorithmen wie z. B. `std::find_if` und `std::for_each`.
   * Einsatz von Lambdas.
-  * Gebruach von Iteratoren.
+  * Gebrauch von Iteratoren.
 
 Im Großen und Ganzen kann man sagen, dass die Funktionsweise der Methoden der Klasse `Phonebook` selbsterklärend ist.
 Weitere Details zur Definition dieser Methoden entnehmen Sie bitte *Tabelle* 1:
@@ -36,16 +36,16 @@ Weitere Details zur Definition dieser Methoden entnehmen Sie bitte *Tabelle* 1:
 | `contains` | `bool contains(const std::string& first, const std::string& last);`<br/>Liefert die Information zurück, ob ein bestimmter Eintrag (*Vorname* und *Nachname*) im Telefonbuch vorhanden ist oder nicht. |
 | `print` | `void print();`<br/>Gibt den Inhalt des Telefonbuchs in der Konsole aus. |
 
-*Tabelle* 1: Beschreibung der öffentlichen Schnittstelle einer Telefonbuch Realisierung.
+*Tabelle* 1: Beschreibung der öffentlichen Schnittstelle einer Telefonbuch-Realisierung.
 
 Es folgen einige Hinweise zur Realisierung:
 
-Die Klasse `std::vector` ist der STL-Allzweckcontainer für eine Ansammlung von Daten,
+Die Klasse `std::vector` ist der STL-Allzweck Container für eine Ansammlung von Daten,
 deren Umfang sich zur Laufzeit eines Programms ändern kann.
 
 Wie müssen Sie ein konkretes `std::vector`-Objekt definieren,
 wenn wir pro Eintrag die drei Informationen *Vorname* (`std::string`), *Nachname* (`std::string`) und *Telefonnummer* (`std::size_t`)
-im Telefonbuch ablegen wollen? Es bieten sich mehrere Möglichkeiten in der Realisierung an!
+im Telefonbuch ablegen wollen? Es bieten sich mehrere Möglichkeiten zur Realisierung an!
 
 <img src="cpp_vector_phonebook.svg" width="400">
 

@@ -21,7 +21,7 @@ Da die maximale Intensität jeder der drei Grundfarben 255 ist, genügt ein Doppel
 Hier wäre sogar noch Platz für einen vierten Kanal, den Alpha-Kanal, den wir der Einfachheit halber
 in unsere Betrachtungen nicht mit einbeziehen.
 
-Für den Datentyp einer Farbe gibt es in Windows die folgende Datentypdefinition:
+Für den Datentyp einer Farbe gibt es in Windows die folgende Datentyp Definition:
 
 ```cpp
 typedef DWORD COLORREF;
@@ -51,7 +51,7 @@ COLORREF darkGreen = RGB(1, 50, 32);
 ## 1. Teilaufgabe
 
 Auch wenn es Microsoft (vor vielen Jahren) in seinen Implementierungen so gemacht hat,
-muss das nicht heißen, das dies eine gute Idee war.
+muss das nicht heißen, dass dies eine gute Idee war.
 Testen Sie folgende, leicht alternativ, formulierten Farbdefinitionen in einem kleinen Programm:
 
 ```cpp
@@ -69,7 +69,7 @@ Bei genauem Hinsehen erkennen Sie mal kleinere, mal größere Abweichungen im Verg
 ## 2. Teilaufgabe
 
 In einer Modern C++ Anwendung sind #define-Makros nicht mehr das Mittel der Wahl.
-Schreiben Sie eine `constexpr`-Funktion `Rgb` mit derselben Funktionaltität, die das `RGB`-Makro besitzt.
+Schreiben Sie eine `constexpr`-Funktion `Rgb` mit derselben Funktionalität, die das `RGB`-Makro besitzt.
 
 Verwenden Sie dazu die `#include`-Datei `<cstdint>`, um Datentypen wie `std::uint8_t` oder `std::uint32_t` zur Verfügung zu haben.
 Testen Sie nun erneut die Beispiele aus dem letzten Abschnitt.
@@ -116,7 +116,7 @@ Zu diesem Zweck entwickeln wir eine Klasse `Color` mit folgender öffentlicher Sc
 
 *Tabelle* 1: Öffentliche und private Methoden der Klasse `Color`.
 
-Verfifizieren Sie Ihre Realisierung an folgenden Beispielen:
+Verifizieren Sie Ihre Realisierung an folgenden Beispielen:
 
 ```cpp
 constexpr Color cyan{ "#00FFFF" };
