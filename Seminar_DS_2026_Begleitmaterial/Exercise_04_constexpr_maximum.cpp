@@ -144,7 +144,6 @@ void test_exercises_constexpr_maximum()
     using namespace Exercise_ConstExpr;
 
     testExercise();
-
 }
 
 // =====================================================================================

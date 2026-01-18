@@ -102,17 +102,17 @@ Sollten Sie mit `constexpr` auf den Geschmack gekommen sein, dann gehen wir nun 
 und erweitern die Funktionalität der `Rgb`-Funktion.
 Zu diesem Zweck entwickeln wir eine Klasse `Color` mit folgender öffentlicher Schnittstelle:
 
-| Methode | Schnittstelle | Beschreibung |
+| Methode | Schnittstelle und Beschreibung |
 |:-|:-|:-|
-| Konstruktor | `constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b)` | Benutzerdefinierter Konstruktor, die drei Kanäle R, G und B werden in das Objekt aufgenommen. |
-| Konstruktor | `constexpr Color(const std::string_view s)` | Benutzerdefinierter Konstruktor, die Farbe wird durch eine Zeichenkette in hexadezimaler Form beschrieben, z. B. `"#00FFFF"`  |
-| Hilfsmethode | `static constexpr Color parse(std::string_view str)` | Rechnet einen Farbwert in Zeichenkettendarstellung in einen numerischen Wert um. |
-| Hilfsmethode | `static constexpr std::optional<std::uint8_t> nibble(char n)` | Dekodiert den Wert eines Nibbles (Zeichen `0` bis `9`, `a` bis `f` oder `A` bis `F`). |
-| Hilfsmethode | `static constexpr std::optional<std::uint8_t> byte(std::string_view sv)` | Dekodiert den Wert eines Bytes (z. B. `"FF"` oder `00`) |
-| *getter*-Methode | `constexpr std::uint8_t GetRValue() const;` | Liefert den R-Farbkanal zurück. |
-| *getter*-Methode | `constexpr std::uint8_t GetGValue() const;` | Liefert den G-Farbkanal zurück. |
-| *getter*-Methode | `constexpr std::uint8_t GetBValue() const;` | Liefert den B-Farbkanal zurück. |
-| *getter*-Methode | `constexpr std::uint32_t value() const` | Liefert den Farbwert in einer Variablen des Typs `std::uint32_t` zurück. |
+| Konstruktor | `constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b);`<br/>Benutzerdefinierter Konstruktor, die drei Kanäle R, G und B werden in das Objekt aufgenommen. |
+| Konstruktor | `constexpr Color(const std::string_view s);`<br/>Benutzerdefinierter Konstruktor, die Farbe wird durch eine Zeichenkette in hexadezimaler Form beschrieben, z. B. `"#00FFFF"`  |
+| Hilfsmethode | `static constexpr Color parse(std::string_view str);`<br/>Rechnet einen Farbwert in Zeichenkettendarstellung in einen numerischen Wert um. |
+| Hilfsmethode | `static constexpr std::optional<std::uint8_t> nibble(char n);`<br/>Dekodiert den Wert eines Nibbles (Zeichen `0` bis `9`, `a` bis `f` oder `A` bis `F`). |
+| Hilfsmethode | `static constexpr std::optional<std::uint8_t> byte(std::string_view sv);`<br/>Dekodiert den Wert eines Bytes (z. B. `"FF"` oder `00`) |
+| *getter*-Methode | `constexpr std::uint8_t GetRValue() const;`<br/>Liefert den R-Farbkanal zurück. |
+| *getter*-Methode | `constexpr std::uint8_t GetGValue() const;`<br/>Liefert den G-Farbkanal zurück. |
+| *getter*-Methode | `constexpr std::uint8_t GetBValue() const;`<br/>Liefert den B-Farbkanal zurück. |
+| *getter*-Methode | `constexpr std::uint32_t value() const;`<br/>Liefert den Farbwert in einer Variablen des Typs `std::uint32_t` zurück. |
 
 *Tabelle* 1: Öffentliche und private Methoden der Klasse `Color`.
 

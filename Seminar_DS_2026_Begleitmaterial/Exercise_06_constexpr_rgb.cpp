@@ -8,6 +8,12 @@
 #include <optional>
 #include <string_view>
 
+#pragma warning (push)
+#pragma warning (disable : 4244)
+#pragma warning (disable : 4302)
+#pragma warning (disable : 4305)
+#pragma warning (disable : 4309)
+
 // windef.h -- Basic Windows Type Definitions
 typedef unsigned char       BYTE;
 typedef unsigned short      WORD;
@@ -152,7 +158,7 @@ namespace ConstexprRecommendedUsage
 // ===============================================================================================
 
 // function Rgb
-static void test_constexpr_color_001()
+static void test_constexpr_color_01()
 {
     COLORREF red = RGB(255, 0, 0);
     COLORREF lightBlue = RGB(173, 216, 230);
@@ -166,7 +172,7 @@ static void test_constexpr_color_001()
     std::cout << std::endl;
 }
 
-static void test_constexpr_color_002()
+static void test_constexpr_color_02()
 {
     COLORREF unknown1 = RGB(255.0, 0.0, 0.0);             // No warning, no error
     COLORREF unknown2 = RGB('173', '216', '230');         // No warning, no error
@@ -180,7 +186,7 @@ static void test_constexpr_color_002()
     std::cout << std::endl;
 }
 
-static void test_constexpr_color_003()
+static void test_constexpr_color_03()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -196,7 +202,7 @@ static void test_constexpr_color_003()
     std::cout << std::endl;
 }
 
-static void test_constexpr_color_004()
+static void test_constexpr_color_04()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -215,7 +221,7 @@ static void test_constexpr_color_004()
 // ===============================================================================================
 // class Color
 
-static void test_constexpr_color_100()
+static void test_constexpr_color_10()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -224,7 +230,7 @@ static void test_constexpr_color_100()
     std::cout << std::format("{:#010X}", value) << std::endl;
 }
 
-static void test_constexpr_color_101()
+static void test_constexpr_color_11()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -239,7 +245,7 @@ static void test_constexpr_color_101()
     std::cout << std::format("{:#010X}", value) << std::endl;
 }
 
-static void test_constexpr_color_102()
+static void test_constexpr_color_12()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -254,18 +260,20 @@ static void test_constexpr_color_102()
     std::cout << std::format("{:#010X}", darkGreen.value()) << std::endl;
 }
 
+#pragma warning(pop)
+
 // =====================================================================================
 
-void test_constexpr_color()
+void test_exercises_constexpr_rgb()
 {
-    test_constexpr_color_001();
-    test_constexpr_color_002();
-    test_constexpr_color_003();
-    test_constexpr_color_004();
+    test_constexpr_color_01();
+    test_constexpr_color_02();
+    test_constexpr_color_03();
+    test_constexpr_color_04();
 
-    test_constexpr_color_100();
-    test_constexpr_color_101();
-    test_constexpr_color_102();
+    test_constexpr_color_10();
+    test_constexpr_color_11();
+    test_constexpr_color_12();
 }
 
 // =====================================================================================

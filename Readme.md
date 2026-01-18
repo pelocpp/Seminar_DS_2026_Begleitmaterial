@@ -8,7 +8,7 @@
 
 ### [Löschen aller ungeraden Elemente in einem sequenziellen STL-Container](./Seminar_DS_2026_Begleitmaterial/Exercise_02_STL_Erase_Remove.md)
 
-### [Telefonbuch]()
+### [Die STL und eine Klasse `Phonebook`](./Seminar_DS_2026_Begleitmaterial/Exercise_03_STL_Phonebook.md)
 
 ### [Maximum dreier Zahlen](./Seminar_DS_2026_Begleitmaterial/Exercise_04_constexpr_maximum.md)
 

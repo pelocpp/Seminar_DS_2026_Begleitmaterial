@@ -343,7 +343,7 @@ namespace Exercise_Smart_Pointer_Returning_UniquePtr {
     }
 }
 
-void test_exercises_smartpointer_returning_unique_ptr()
+void test_exercises_returning_unique_ptr()
 {
     using namespace Exercise_Smart_Pointer_Returning_UniquePtr;
 
