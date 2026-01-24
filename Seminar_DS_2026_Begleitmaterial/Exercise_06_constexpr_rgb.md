@@ -21,14 +21,14 @@ Da die maximale Intensität jeder der drei Grundfarben 255 ist, genügt ein Doppel
 Hier wäre sogar noch Platz für einen vierten Kanal, den Alpha-Kanal, den wir der Einfachheit halber
 in unsere Betrachtungen nicht mit einbeziehen.
 
-Für den Datentyp einer Farbe gibt es in Windows die folgende Datentyp Definition:
+Für den Datentyp einer Farbe gibt es in Windows die folgende Typdefinition:
 
 ```cpp
 typedef DWORD COLORREF;
 ```
 
 Jetzt fehlen noch die Definitionen für die verwendeten Datentypen wie z. B. `BYTE` oder `DWORD `,
-die wir in der Datei *windef.h* finden.
+die wir in der Datei *windef.h* vorfinden.
 Ein (kleiner) Ausschnitt aus dieser Datei sieht so aus:
 
 
@@ -68,8 +68,8 @@ Bei genauem Hinsehen erkennen Sie mal kleinere, mal größere Abweichungen im Verg
 
 ## 2. Teilaufgabe
 
-In einer Modern C++ Anwendung sind #define-Makros nicht mehr das Mittel der Wahl.
-Schreiben Sie eine `constexpr`-Funktion `Rgb` mit derselben Funktionalität, die das `RGB`-Makro besitzt.
+In einer Modern C++ Anwendung sind `#define`-Makros nicht mehr das Mittel der Wahl.
+Schreiben Sie eine `constexpr`-Funktion `Rgb` mit derselben Funktionalität, wie sie das `RGB`-Makro besitzt.
 
 Verwenden Sie dazu die `#include`-Datei `<cstdint>`, um Datentypen wie `std::uint8_t` oder `std::uint32_t` zur Verfügung zu haben.
 Testen Sie nun erneut die Beispiele aus dem letzten Abschnitt.
@@ -103,8 +103,8 @@ und erweitern die Funktionalität der `Rgb`-Funktion.
 Zu diesem Zweck entwickeln wir eine Klasse `Color` mit folgender öffentlicher Schnittstelle:
 
 | Methode | Schnittstelle und Beschreibung |
-|:-|:-|:-|
-| Konstruktor | `constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b);`<br/>Benutzerdefinierter Konstruktor, die drei Kanäle R, G und B werden in das Objekt aufgenommen. |
+|:-|:-|
+| Konstruktor | `constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b);`<br/>Benutzerdefinierter Konstruktor, die drei Kanäle `r`, `g` und `b` werden in das Objekt aufgenommen. |
 | Konstruktor | `constexpr Color(const std::string_view s);`<br/>Benutzerdefinierter Konstruktor, die Farbe wird durch eine Zeichenkette in hexadezimaler Form beschrieben, z. B. `"#00FFFF"`  |
 | Hilfsmethode | `static constexpr Color parse(std::string_view str);`<br/>Rechnet einen Farbwert in Zeichenkettendarstellung in einen numerischen Wert um. |
 | Hilfsmethode | `static constexpr std::optional<std::uint8_t> nibble(char n);`<br/>Dekodiert den Wert eines Nibbles (Zeichen `0` bis `9`, `a` bis `f` oder `A` bis `F`). |

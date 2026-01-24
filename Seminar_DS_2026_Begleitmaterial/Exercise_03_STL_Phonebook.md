@@ -66,7 +66,7 @@ in einem `std::vector`-Objekt abgelegt.
 Überlegen Sie, ob diese Container-Klasse ideal für den vorliegenden Anwendungsfall ist.
 Nehmen Sie eine zweite Realisierung vor, die auf einem `std::unordered_map`-Container fußt.
 
-<img src="cpp_hash_table_phonebook.svg" width="600">
+<img src="cpp_hash_table_phonebook.svg" width="650">
 
 *Abbildung* 2. Struktureller Aufbau einer Hashtabelle (hier: Hash-Kollision durch separate Verkettung gelöst).
 
