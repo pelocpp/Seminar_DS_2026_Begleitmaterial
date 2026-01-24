@@ -267,13 +267,13 @@ static void test_constexpr_color_12()
 
 void test_exercises_constexpr_rgb()
 {
-    //test_constexpr_color_01();
-    //test_constexpr_color_02();
-    //test_constexpr_color_03();
-    //test_constexpr_color_04();
+    test_constexpr_color_01();
+    test_constexpr_color_02();
+    test_constexpr_color_03();
+    test_constexpr_color_04();
 
-    //test_constexpr_color_10();
-    //test_constexpr_color_11();
+    test_constexpr_color_10();
+    test_constexpr_color_11();
     test_constexpr_color_12();
 }
 
