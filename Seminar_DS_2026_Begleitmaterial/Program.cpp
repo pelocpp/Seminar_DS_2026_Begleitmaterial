@@ -7,7 +7,7 @@ extern void test_exercises_stl_erase_remove();     // erasing and removinv in ST
 extern void test_exercises_phonebook();            // STL basics (container, algorithms, lambdas)
 extern void test_exercises_constexpr_maximum();    // maximum of three values at compile time
 extern void test_exercises_returning_unique_ptr(); // returning an std::unique_ptr object
-extern void test_exercises_constexpr_rgb();        // 
+extern void test_exercises_constexpr_rgb();        // RGB colors at compile time
 
 int main()
 {

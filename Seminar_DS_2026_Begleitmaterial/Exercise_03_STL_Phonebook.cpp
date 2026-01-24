@@ -4,7 +4,6 @@
 
 #include <algorithm> 
 #include <cstddef>
-#include <cstddef>
 #include <iostream>
 #include <optional>
 #include <string>
@@ -47,7 +46,7 @@ namespace Exercise_Phonebook_Using_StdVector {
             return false;
         }
 
-        Entry entry{ first, last, number };
+        auto entry = Entry{ first, last, number };
         m_entries.push_back(entry);
         return true;
     }
@@ -58,8 +57,8 @@ namespace Exercise_Phonebook_Using_StdVector {
             m_entries.begin(),
             m_entries.end(),
             [&](const auto& entry) {
-                const auto& [entryFirst, entrylast, entryNumber] = entry;
-                return entryFirst == first && entrylast == last;
+                const auto& [_first, _last, _number] = entry;
+                return _first == first && _last == last;
             }
         );
 
@@ -67,12 +66,10 @@ namespace Exercise_Phonebook_Using_StdVector {
             return false;
         }
         else {
-            auto& entry = *pos;
+            auto& entry{ *pos };
             std::get<2>(entry) = number;
             return true;
         }
-
-        return true;
     }
 
     std::optional<std::size_t> PhoneBookVector::search(const std::string& first, const std::string& last) const
@@ -81,8 +78,8 @@ namespace Exercise_Phonebook_Using_StdVector {
             m_entries.begin(),
             m_entries.end(),
             [&](const auto& entry) {
-                const auto& [entryFirst, entrylast, entryNumber] = entry;
-                return entryFirst == first && entrylast == last;
+                const auto& [_first, _last, _number] = entry;
+                return _first == first && _last == last;
             }
         );
 
@@ -90,9 +87,9 @@ namespace Exercise_Phonebook_Using_StdVector {
             return std::nullopt;
         }
         else {
-            const Entry& entry = *pos;
-            std::optional<std::size_t> result{ std::get<2>(entry) };
-            return result;
+            const auto& entry{ *pos };
+            auto number{ std::get<2>(entry) };
+            return number;
         }
     }
 
@@ -102,8 +99,8 @@ namespace Exercise_Phonebook_Using_StdVector {
             m_entries.begin(),
             m_entries.end(),
             [&](const auto& entry) {
-                const auto& [entryFirst, entrylast, entryNumber] = entry;
-                return entryFirst == first && entrylast == last;
+                const auto& [_first, _last, _number] = entry;
+                return _first == first && _last == last;
             }
         );
 
@@ -116,8 +113,8 @@ namespace Exercise_Phonebook_Using_StdVector {
             m_entries.begin(),
             m_entries.end(),
             [&](const auto& entry) {
-                const auto& [entryFirst, entrylast, entryNumber] = entry;
-                return entryFirst == first && entrylast == last;
+                const auto& [_first, _last, _number] = entry;
+                return _first == first && _last == last;
             }
         );
 
@@ -136,8 +133,8 @@ namespace Exercise_Phonebook_Using_StdVector {
             m_entries.begin(),
             m_entries.end(),
             [](auto const& entry) {
-                const auto& [entryFirst, entryLast, entryNumber] = entry;
-                std::cout << entryFirst << " " << entryLast << ": " << entryNumber << std::endl;
+                const auto& [first, last, number] = entry;
+                std::cout << first << " " << last << ": " << number << std::endl;
             }
         );
     }
@@ -145,39 +142,9 @@ namespace Exercise_Phonebook_Using_StdVector {
 
 namespace Exercise_Phonebook_Using_StdUnordererMap {
 
-    //class PhoneBookMap : public IPhoneBook
-    //{
-    //private:
-    //    std::unordered_map<std::string, std::size_t> m_map;
-
-    //public:
-    //    // public interface
-    //    std::size_t size() override;
-    //    bool insert(const std::string& first, const std::string& last, std::size_t number) override;
-    //    bool update(const std::string& first, const std::string& last, std::size_t number) override;
-    //    bool search(const std::string& first, const std::string& last, std::size_t& number) override;
-    //    bool remove(const std::string& first, const std::string& last) override;
-    //    bool contains(const std::string& first, const std::string& last) override;
-    //    std::forward_list<std::string> getNames() override;
-    //    std::string toString() override;
-    //    void print() override;
-
-    //private:
-    //    // helper methods
-    //    static std::pair<std::string, std::string> getNameFromKey(const std::string&);
-    //    static std::string getKeyFromName(const std::string&, const std::string&);
-
-    //    static void printEntry(const std::pair<std::string, std::size_t>&);
-    //    static std::string pairToString(const std::pair<std::string, std::size_t>&);
-    //    static std::string append(const std::string&, const std::pair<std::string, std::size_t>&);
-    //};
-
     class PhoneBookMap
     {
     private:
-        // member type
-      //  using Entry = std::pair<std::string, std::size_t>;
-
         // member data
         std::unordered_map<std::string, std::size_t> m_entries;
 
@@ -197,23 +164,22 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
         static std::string getKeyFromName(const std::string&, const std::string&);
     };
 
+    // getter
     std::size_t PhoneBookMap::size() const
     {
         return m_entries.size();
     }
 
+    // public interface
     bool PhoneBookMap::insert(const std::string& first, const std::string& last, std::size_t number)
     {
         const auto& key{ getKeyFromName(first, last) };
 
-        std::pair<std::string, std::size_t> entry{ key, number };
+        auto entry{ std::pair<std::string, std::size_t>{ key, number } };
 
-        // std::pair<std::unordered_map<std::string, std::size_t>::iterator, bool> result = m_entries.insert(entry);
         auto [pos, succeeded] { m_entries.insert(entry) };
 
         // returns a bool value set to true if and only if the insertion took place
-        // bool insertionSucceeded = result.second;
-
         return succeeded;
     }
 
@@ -221,7 +187,7 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
     {
         const auto& key{ getKeyFromName(first, last) };
 
-        auto pos = m_entries.find(key);
+        auto pos{ m_entries.find(key) };
 
         if (pos == m_entries.end()) {
             return false;
@@ -236,7 +202,7 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
     {
         const auto& key{ getKeyFromName(first, last) };
 
-        std::unordered_map<std::string, std::size_t>::const_iterator pos = m_entries.find(key);
+        auto pos{ m_entries.find(key) };
 
         if (pos == m_entries.end()) {
 
@@ -244,9 +210,8 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
             return std::nullopt;
         }
         else {
-            std::pair<std::string, std::size_t> result = *pos;
-           // number = result.second;
-            return result.second;
+            const auto& [key, number] {*pos};
+            return number;
         }
     }
 
@@ -254,7 +219,7 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
     {
         const auto& key{ getKeyFromName(first, last) };
 
-        auto pos = m_entries.find(key);
+        auto pos{ m_entries.find(key) };
 
         return pos != m_entries.end();
     }
@@ -263,21 +228,10 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
     {
         const auto& key{ getKeyFromName(first, last) };
 
-        auto numErased = m_entries.erase(key);
+        auto numErased{ m_entries.erase(key) };
 
         return numErased == 1;
     }
-
-
-    // ---------------------------------------------------------------------------
-
-    //void PhoneBookMap::printEntry(const std::pair<std::string, std::size_t>& entry)
-    //{
-    //    std::string key = entry.first;
-    //    std::pair<std::string, std::string> fullName = getNameFromKey(key);
-    //    std::size_t number = entry.second;
-    //    std::cout << fullName.first << " " << fullName.second << ": " << number << std::endl;
-    //}
 
     void PhoneBookMap::print() const
     {
@@ -285,27 +239,21 @@ namespace Exercise_Phonebook_Using_StdUnordererMap {
             m_entries.begin(),
             m_entries.end(),
             [] (const auto& entry) {
-
-                const auto& [key, name] = entry;
-
-                // auto !!!
-                std::pair<std::string, std::string> fullName = getNameFromKey(key);
-
-                std::cout << fullName.first << " " << fullName.second << ": " << key << std::endl;
+                const auto& [key, number] = entry;
+                const auto& [first, last] { getNameFromKey(key) };
+                std::cout << first << " " << last << ": " << number << std::endl;
             }
         );
     }
 
-    // ---------------------------------------------------------------------------
-
+    // helper methods
     std::pair<std::string, std::string> PhoneBookMap::getNameFromKey(const std::string& key)
     {
-        std::size_t pos = key.find("_");
+        auto pos{ key.find("_") };
+        const auto& first{ key.substr(0, pos) };
+        const auto& last{ key.substr(pos + 1) };
 
-        std::string first = key.substr(0, pos);
-        std::string last = key.substr(pos + 1);
-
-        return std::pair<std::string, std::string>(first, last);
+        return { first, last };
     }
 
     std::string PhoneBookMap::getKeyFromName(const std::string& first, const std::string& last)
