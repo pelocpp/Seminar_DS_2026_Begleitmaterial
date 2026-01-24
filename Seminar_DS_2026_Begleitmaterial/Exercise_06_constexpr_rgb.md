@@ -61,6 +61,8 @@ COLORREF aqua      = RGB("0", "255", "255");
 COLORREF darkGreen = RGB(1000, 5000, 32000);
 ```
 
+Kopieren Sie zu diesem Zweck einfach die Makro-Definitionen `COLORREF` und `RGB` aus der Einleitung in ihr Programm um.
+
 Bei genauem Hinsehen erkennen Sie mal kleinere, mal größere Abweichungen im Vergleich zum Originalbeispiel.
 
   * Welche Fehlermeldungen erzeugt ein C/C++-Compiler bei den gezeigten Variablen?
@@ -106,9 +108,9 @@ Zu diesem Zweck entwickeln wir eine Klasse `Color` mit folgender öffentlicher Sc
 |:-|:-|
 | Konstruktor | `constexpr Color(std::uint8_t r, std::uint8_t g, std::uint8_t b);`<br/>Benutzerdefinierter Konstruktor, die drei Kanäle `r`, `g` und `b` werden in das Objekt aufgenommen. |
 | Konstruktor | `constexpr Color(const std::string_view s);`<br/>Benutzerdefinierter Konstruktor, die Farbe wird durch eine Zeichenkette in hexadezimaler Form beschrieben, z. B. `"#00FFFF"`  |
-| Hilfsmethode | `static constexpr Color parse(std::string_view str);`<br/>Rechnet einen Farbwert in Zeichenkettendarstellung in einen numerischen Wert um. |
-| Hilfsmethode | `static constexpr std::optional<std::uint8_t> nibble(char n);`<br/>Dekodiert den Wert eines Nibbles (Zeichen `0` bis `9`, `a` bis `f` oder `A` bis `F`). |
-| Hilfsmethode | `static constexpr std::optional<std::uint8_t> byte(std::string_view sv);`<br/>Dekodiert den Wert eines Bytes (z. B. `"FF"` oder `00`) |
+| Hilfsmethode | `static constexpr Color parse(std::string_view str);`<br/>Rechnet einen Farbwert in Zeichenkettendarstellung in einen numerischen Wert um. Das Ergebnis ist ein Objekt des Typs `Color`. |
+| Hilfsmethode | `static constexpr std::optional<std::uint8_t> nibble(char n);`<br/>Dekodiert den Wert eines Nibbles in Zeichendarstellung (Zeichen `0` bis `9`, `a` bis `f` oder `A` bis `F`). Das Ergebnis ist ein numerischer Wert im Bereich von 0 bis 15. |
+| Hilfsmethode | `static constexpr std::optional<std::uint8_t> byte(std::string_view sv);`<br/>Dekodiert den Wert eines Bytes in Zeichendarstellung (z. B. `"FF"` oder `"00"`). Das Ergebnis ist ein numerischer Wert im Bereich von 0 bis 255. |
 | *getter*-Methode | `constexpr std::uint8_t GetRValue() const;`<br/>Liefert den R-Farbkanal zurück. |
 | *getter*-Methode | `constexpr std::uint8_t GetGValue() const;`<br/>Liefert den G-Farbkanal zurück. |
 | *getter*-Methode | `constexpr std::uint8_t GetBValue() const;`<br/>Liefert den B-Farbkanal zurück. |
@@ -130,7 +132,14 @@ constexpr auto value{ cyan.value() };
 std::cout << std::format("{:#010X}", value) << std::endl;
 ```
 
-oder auch:
+*Ausgabe*:
+
+```
+0X00:0XFF:0XFF
+0X00FFFF00
+```
+
+Oder auch:
 
 ```cpp
 constexpr Color red{ 255, 0, 0 };
@@ -142,6 +151,15 @@ std::cout << std::format("{:#010X}", red.value()) << std::endl;
 std::cout << std::format("{:#010X}", lightBlue.value()) << std::endl;
 std::cout << std::format("{:#010X}", aqua.value()) << std::endl;
 std::cout << std::format("{:#010X}", darkGreen.value()) << std::endl;
+```
+
+*Ausgabe*:
+
+```
+0X000000FF
+0X00E6D8AD
+0X00FFFF00
+0X00203201
 ```
 
 ---
