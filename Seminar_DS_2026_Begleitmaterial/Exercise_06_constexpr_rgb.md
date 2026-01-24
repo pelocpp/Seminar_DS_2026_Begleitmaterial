@@ -1,4 +1,4 @@
-# Aufgabe: Konstante Farben
+# Aufgabe: RGB Farben
 
 ---
 

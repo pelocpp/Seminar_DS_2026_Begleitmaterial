@@ -13,8 +13,9 @@
 #endif
 #endif  // _DEBUG
 
-#include <memory>
+#include <cstddef>
 #include <iostream>
+#include <memory>
 
 namespace Exercise_Smart_Pointer {
 

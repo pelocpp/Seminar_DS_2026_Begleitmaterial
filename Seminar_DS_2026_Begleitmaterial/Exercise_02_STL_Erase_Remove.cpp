@@ -5,6 +5,7 @@
 #include "ScopedTimer.h"
 
 #include <algorithm>
+#include <cstddef>
 #include <iostream>
 #include <numeric>
 #include <vector>

@@ -2,6 +2,7 @@
 // Exercise_06_constexpr_rgb.cpp
 // =====================================================================================
 
+#include <cstddef>
 #include <cstdint>
 #include <format>
 #include <iostream>

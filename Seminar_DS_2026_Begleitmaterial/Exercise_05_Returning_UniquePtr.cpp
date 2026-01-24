@@ -13,6 +13,7 @@
 #endif
 #endif  // _DEBUG
 
+#include <cstddef>
 #include <iostream>
 #include <memory>
 #include <optional>

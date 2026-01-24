@@ -14,6 +14,6 @@
 
 ### [Rückgabe eines `std::unique_ptr<>`-Objekts aus einer Funktion](./Seminar_DS_2026_Begleitmaterial/Exercise_05_Returning_UniquePtr.md)
 
-### [Konstante Farben](./Seminar_DS_2026_Begleitmaterial/Exercise_06_constexpr_rgb.md)
+### [RGB Farben](./Seminar_DS_2026_Begleitmaterial/Exercise_06_constexpr_rgb.md)
 
 ---
