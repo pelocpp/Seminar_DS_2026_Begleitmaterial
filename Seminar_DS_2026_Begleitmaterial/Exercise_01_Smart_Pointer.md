@@ -91,6 +91,37 @@ so dass deren Objekte auch verschoben werden können.
 
 Zeigen Sie das Verschieben an entsprechenden Beispielen auf.
 
+## Integration in den Unit Test Framework
+
+Bei Erstellung der Lösung im Kontext des Unit Test Frameworks könnte eine Struktur 
+der Aufgabe so aussehen:
+
+```cpp
+TEST_CLASS(SchulungModernCpp_Test)
+{
+    TEST_METHOD(HelloWorld) {
+        Logger::WriteMessage(L"Willkomen zu den Übungen der Modern Cpp Schulung!");
+    }
+
+    // ====================================================================
+    // Übung Klasse MyString
+    //====================================================================
+    
+    class MyString
+    {
+        // Implementation
+        MyString(const char* s);     // Benutzerdefinierter Konstruktor– die Zeichen des Parameters s werden in das Objekt aufgenommen 
+        void print();                // Ausgabe der Zeichenkette auf der Konsole.
+        std::size_t length();        // Liefert die Anzahl der Zeichen zurück.
+        char& operator[](int index); // Lesender oder schreibender Zugriff auf ein einzelnes Zeichen der Zeichenkette.
+    };
+
+    TEST_METHOD(Übung1) {
+        // TBD
+    }
+}
+```
+
 ---
 
 [Lösung](Exercise_01_Smart_Pointer.cpp)

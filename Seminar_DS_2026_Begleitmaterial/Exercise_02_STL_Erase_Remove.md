@@ -61,6 +61,36 @@ Welche Beobachtungen können Sie in Bezug auf die Ausführungszeiten des Vergleich
 Verwenden Sie für die bisher erstellten Lösungen an Stelle des `int`-Datentyps den projekt-spezifischen
 Datentyp `SA_Integer`. Vergleichen Sie noch einmal die Ausführungszeiten des Programms.
 
+## Integration in den Unit Test Framework
+
+Bei Erstellung der Lösung im Kontext des Unit Test Frameworks könnte eine Struktur 
+der Aufgabe so aussehen:
+
+```cpp
+TEST_CLASS(SchulungModernCpp_Test)
+{
+    // ====================================================================
+    // Übung Erase / Remove
+    //====================================================================
+    
+    TEST_METHOD(Übung2)
+    {
+        ScopedTimer timer{ ScopedTimer::Resolution::Micro };
+
+        std::vector<SA_Integer> vec{0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+
+        // erase all even numbers
+        for (std::vector<SA_Integer>::iterator it = vec.begin(); it != vec.end(); ++it)
+        {
+            if (*it % 2 == 0)
+            {
+            vec.erase(it);
+            }
+        }
+    }
+}
+```
+
 ---
 
 [Lösung](Exercise_02_STL_Erase_Remove.cpp)
