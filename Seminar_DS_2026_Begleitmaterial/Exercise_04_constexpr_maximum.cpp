@@ -112,6 +112,7 @@ namespace Exercise_ConstExpr {
     static void testExercise()
     {
         constexpr auto result01 = maximum(1, 2, 3);
+        static_assert(result01 == 3, "3 Expected");
 
         constexpr auto result02 = maximumGeneric(1.5, 2.5, 3.5);
         // constexpr auto result03 = maximumGeneric(1.5, 2.5f, 3.5);          // does NOT compile (!)

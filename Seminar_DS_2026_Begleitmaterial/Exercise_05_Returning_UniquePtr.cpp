@@ -223,11 +223,9 @@ namespace Exercise_Smart_Pointer_Returning_UniquePtr {
 
             std::span<size_t> digits{ buffer.get(), count };
 
-          //  std::println("Splitting of {}:", number);
             std::cout << "Splitting of " << number << ':' << std::endl;
             for (std::size_t i{}; auto digit : digits) {
 
-              //  std::println("{}: {}", i, digit);
                 std::cout << i << ": " << digit << std::endl;
                 ++i;
             }
@@ -248,11 +246,9 @@ namespace Exercise_Smart_Pointer_Returning_UniquePtr {
 
             std::span<size_t> digits{ buffer.get(), count };
 
-            //std::println("Splitting of {}:", number);
             std::cout << "Splitting of " << number << ':' << std::endl;
             for (std::size_t i{}; auto digit : digits) {
 
-                //std::println("{}: {}", i, digit);
                 std::cout << i << ": " << digit << std::endl;
                 ++i;
             }
@@ -271,11 +267,9 @@ namespace Exercise_Smart_Pointer_Returning_UniquePtr {
 
             std::span<size_t> digits{ splitting.m_digits.get(), splitting.m_count };
 
-            // std::println("Splitting of {}:", number);
             std::cout << "Splitting of " << number << ':' << std::endl;
             for (std::size_t i{}; auto digit : digits) {
 
-                //std::println("{}: {}", i, digit);
                 std::cout << i << ": " << digit << std::endl;
                 ++i;
             }
@@ -294,11 +288,9 @@ namespace Exercise_Smart_Pointer_Returning_UniquePtr {
 
             std::span<size_t> digits{ buffer.get(), count };
 
-         //   std::println("Splitting of {}:", number);
             std::cout << "Splitting of " << number << ':' << std::endl;
             for (std::size_t i{}; auto digit : digits) {
 
-                // std::println("{}: {}", i, digit);
                 std::cout << i << ": " << digit << std::endl;
                 ++i;
             }
@@ -319,12 +311,10 @@ namespace Exercise_Smart_Pointer_Returning_UniquePtr {
 
             std::span<size_t> digits{ buffer.get(), count };
 
-            // std::println("Splitting of {}:", number);
             std::cout << "Splitting of " << number << ':' << std::endl;
 
             for (std::size_t i{}; auto digit : digits) {
 
-                //   std::println("{}: {}", i, digit);
                 std::cout << i << ": " << digit << std::endl;
                 ++i;
             }

@@ -41,6 +41,30 @@ constexpr auto result = maximum(1, 2, 3);
 Welche unterschiedlichen Möglichkeiten gibt es in der Deklaration der Schnittstelle der `maximum`-Funktion?
 Diskutieren bzw. erläutern Sie die Unterschiede der jeweiligen Deklaration.
 
+## Integration in den Unit Test Framework
+
+Bei Erstellung der Lösung im Kontext des Unit Test Frameworks könnte eine Struktur 
+der Aufgabe so aussehen:
+
+```cpp
+TEST_CLASS(SchulungModernCpp_Test)
+{
+    // ===================================================================
+    // Übung Maximum dreier Zahlen
+    //====================================================================
+
+    static constexpr auto maximum(SA_String a, SA_String b, SA_String c) {
+        // TBD
+    };
+
+    TEST_METHOD(Übung4)
+    {
+        constexpr auto result = maximum(1, 2, 3);
+        static_assert(result == 3, "3 expected");
+    }
+}
+```
+
 ---
 
 [Lösung](Exercise_04_constexpr_maximum.cpp)

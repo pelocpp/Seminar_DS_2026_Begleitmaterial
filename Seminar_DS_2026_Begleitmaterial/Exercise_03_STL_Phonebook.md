@@ -38,6 +38,26 @@ Weitere Details zur Definition ihrer Methoden entnehmen Sie bitte *Tabelle* 1:
 
 *Tabelle* 1: Beschreibung der öffentlichen Schnittstelle einer Telefonbuch-Realisierung.
 
+
+*Hinweis*:<br />
+Bei Erstellung der Klasse `Phonebook` im Kontext des Unit Test Frameworks sehen die Signaturen
+der Methoden so aus (Beachten Sie den Gebrauch der Klassen `SA_String` und `SA_Integer`):
+
+```cpp
+class Phonebook
+{
+    size_t size();
+    bool insert(const SA_String& first, const SA_String& last, SA_Integer number);
+    bool search_legacy(const SA_String& first, const SA_String& last, SA_Integer& number);
+    std::optional<SA_Integer> search_optional(const SA_String& first, const SA_String& last);
+    std::optional<std::unique_ptr<SA_Integer>> search_optional_ptr (const SA_String& first, const SA_String& last);
+    bool remove(const SA_String& first, const SA_String& last);
+    bool contains(const SA_String& first, const SA_String& last); 
+    void print();
+};
+```
+
+
 Es folgen einige Hinweise zur Realisierung:
 
 Die Klasse `std::vector` ist der STL-Allzweck Container für eine Ansammlung von Daten,
@@ -70,6 +90,36 @@ Nehmen Sie eine zweite Realisierung vor, die auf einem `std::unordered_map`-Cont
 
 *Abbildung* 2. Struktureller Aufbau einer Hashtabelle (hier: Hash-Kollision durch separate Verkettung gelöst).
 
+
+## Integration in den Unit Test Framework
+
+Bei Erstellung der Lösung im Kontext des Unit Test Frameworks könnte eine Struktur 
+der Aufgabe so aussehen:
+
+```cpp
+TEST_CLASS(SchulungModernCpp_Test)
+{
+    // ===================================================================
+    // Übung Klasse Phonebook
+    //====================================================================
+
+    class Phonebook
+    {
+        size_t size();
+        bool insert(const SA_String& first, const SA_String& last, SA_Integer number);
+        bool search_legacy(const SA_String& first, const SA_String& last, SA_Integer& number);
+        std::optional<SA_Integer> search_optional(const SA_String& first, const SA_String& last);
+        std::optional<std::unique_ptr<SA_Integer>> search_optional_ptr (const SA_String& first, const SA_String& last);
+        bool remove(const SA_String& first, const SA_String& last);
+        bool contains(const SA_String& first, const SA_String& last); 
+        void print();
+    };
+    
+    TEST_METHOD(Übung3) {
+        // TBD
+    }
+}
+```
 
 ---
 

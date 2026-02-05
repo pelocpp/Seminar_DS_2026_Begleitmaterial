@@ -104,6 +104,40 @@ so könnte der Testrahmen wie folgt aussehen:
 13: }
 ```
 
+## Integration in den Unit Test Framework
+
+Bei Erstellung der Lösung im Kontext des Unit Test Frameworks könnte eine Struktur 
+der Aufgabe so aussehen:
+
+```cpp
+TEST_CLASS(SchulungModernCpp_Test)
+{
+    // ===================================================================
+    // Übung Rückgabe eines `std::unique_ptr<>`-Objekts aus einer Funktion
+    //====================================================================
+
+    /** Rückgabewert **/ splitToDigitsByRef(/** Parameter **/)
+    {
+        // Implementation
+    }
+    
+    TEST_METHOD(Übung5)
+    {
+        // Passe den Test an den von dir gewählten Methodenkopf an.
+        size_t number{ 54321 };
+        bool success{ splitToDigitsByRef(/** Argumente **/) };
+        if (success) {
+            std::span<size_t> digits{ /** Input für Span**/ };
+            std::cout << std::format("Splitting of {}:\n", number);
+            for (size_t i{}; auto digit : digits) {
+                std::cout << std::format("{}: {}\n", i, digit);
+                ++i;
+            }
+        }
+    }
+}
+```
+
 ---
 
 [Lösung](Exercise_05_Returning_UniquePtr.cpp)

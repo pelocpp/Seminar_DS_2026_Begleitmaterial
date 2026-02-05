@@ -227,11 +227,22 @@ static void test_constexpr_color_10()
     using namespace ConstexprRecommendedUsage;
 
     constexpr Color cyan{ 0, 255, 255 };
+
+    static_assert(cyan.GetRValue() == 0,   "0 Expected");
+    static_assert(cyan.GetGValue() == 255, "255 Expected");
+    static_assert(cyan.GetBValue() == 255, "255 Expected");
+}
+
+static void test_constexpr_color_11()
+{
+    using namespace ConstexprRecommendedUsage;
+
+    constexpr Color cyan{ 0, 255, 255 };
     auto value{ cyan.value() };
     std::cout << std::format("{:#010X}", value) << std::endl;
 }
 
-static void test_constexpr_color_11()
+static void test_constexpr_color_12()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -246,7 +257,7 @@ static void test_constexpr_color_11()
     std::cout << std::format("{:#010X}", value) << std::endl;
 }
 
-static void test_constexpr_color_12()
+static void test_constexpr_color_13()
 {
     using namespace ConstexprRecommendedUsage;
 
@@ -275,6 +286,7 @@ void test_exercises_constexpr_rgb()
     test_constexpr_color_10();
     test_constexpr_color_11();
     test_constexpr_color_12();
+    test_constexpr_color_13();
 }
 
 // =====================================================================================

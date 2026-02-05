@@ -103,7 +103,7 @@ TEST_CLASS(SchulungModernCpp_Test)
         Logger::WriteMessage(L"Willkomen zu den Übungen der Modern Cpp Schulung!");
     }
 
-    // ====================================================================
+    // ===================================================================
     // Übung Klasse MyString
     //====================================================================
     

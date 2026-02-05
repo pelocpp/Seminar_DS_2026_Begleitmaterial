@@ -162,6 +162,33 @@ std::cout << std::format("{:#010X}", darkGreen.value()) << std::endl;
 0X00203201
 ```
 
+## Integration in den Unit Test Framework
+
+Bei Erstellung der Lösung im Kontext des Unit Test Frameworks könnte eine Struktur 
+der Aufgabe so aussehen:
+
+```cpp
+TEST_CLASS(SchulungModernCpp_Test)
+{
+    // ===================================================================
+    // Übung RGB Farben
+    //====================================================================
+
+    class Color {
+        // TBD
+    };
+
+    TEST_METHOD(Übung6)
+    {
+        constexpr Color cyan{ 0, 255, 255 };
+        
+        static_assert(cyan.GetRValue() == 0,   "0 Expected");
+        static_assert(cyan.GetGValue() == 255, "255 Expected");
+        static_assert(cyan.GetBValue() == 255, "255 Expected");
+    }
+}
+```
+
 ---
 
 [Lösung](Exercise_06_constexpr_rgb.cpp)
