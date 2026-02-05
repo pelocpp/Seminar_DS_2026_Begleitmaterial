@@ -41,7 +41,7 @@ Weitere Details zur Definition ihrer Methoden entnehmen Sie bitte *Tabelle* 1:
 
 *Hinweis*:<br />
 Bei Erstellung der Klasse `Phonebook` im Kontext des Unit Test Frameworks sehen die Signaturen
-der Methoden so aus (Beachten Sie den Gebrauch der Klassen `SA_String` und `SA_Integer`):
+der Methoden so aus &ndash; Beachten Sie den Gebrauch der Klassen `SA_String` und `SA_Integer`:
 
 ```cpp
 class Phonebook

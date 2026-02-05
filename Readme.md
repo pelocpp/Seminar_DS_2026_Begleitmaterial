@@ -21,7 +21,7 @@
 ## Hinweise zur Lösung der Aufgaben
 
 Es ist vorgesehen, dass Sie die Aufgaben &ndash; soweit machbar &ndash; im Kontext
-des Unit Test Frameworks realisiert werden. Auf diese Weise lassen sich auch
+des *Unit Test Frameworks* realisiert werden. Auf diese Weise lassen sich auch
 Diamant Software spezifische Klassen
 wie z. B. `SA_Integer` verwenden, die sonst nicht zur Verfügung stehen würden.
 
@@ -33,8 +33,8 @@ der Aufgabenstellung in den Unit Test Framework aussehen könnte.
 ## Laufzeitmessungen
 
 Für Laufzeitmessungen findet man in diesem Repository eine Klasse `ScopedTimer` vor.
-Es handelt sich um eine Header-Only-Klasse,
-ihr vollständiger Quellcode (Deklarationen und Implementierungen) wird in ihrer Header-Dateien
+Es handelt sich um eine *Header-Only*-Klasse,
+ihr vollständiger Quellcode (Deklarationen und Implementierungen) wird in der Header-Dateien
 bereitgestellt.
 
 Ein Beispiel für die Verwendung dieser Klasse könnte so aussehen:
@@ -45,12 +45,12 @@ Ein Beispiel für die Verwendung dieser Klasse könnte so aussehen:
 // Er misst die Zeit vom Aufruf seines Konstruktors bis zum Aufruf seines Destruktors.
 // Die gemessene Zeit wird im Testergebniss ausgegeben.
 
+// ggf. noch anzupassen
 #include "CppUnitTest.h"
 #include "ScopedTimer.h"   // geeignet umzukopieren
 
 #include <SA_Basis/LC1_UnitTestHelpers.h>
 
-#include <iostream>
 #include <chrono>
 #include <vector>
 #include <algorithm>
