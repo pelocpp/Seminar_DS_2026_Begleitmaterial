@@ -23,7 +23,8 @@ public:
         startWatch();
     }
 
-    ScopedTimer(enum Resolution resolution) : m_resolution{ resolution }
+    ScopedTimer(enum Resolution resolution) 
+        : m_resolution{ resolution }
     {
         startWatch();
     }
