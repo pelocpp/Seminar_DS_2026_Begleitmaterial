@@ -38,7 +38,7 @@ namespace Exercise_STL_Erase_Remove {
         print(vec);
 
         // erase all even numbers
-        for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
+        for (auto it = vec.begin(); it != vec.end(); ++it)
         {
             if (*it % 2 == 0) {
                 vec.erase(it);
@@ -57,12 +57,14 @@ namespace Exercise_STL_Erase_Remove {
         print(vec);
 
         // erase all even numbers
-        for (std::vector<int>::iterator it = vec.begin(); it != vec.end();)
+        for (auto it = vec.begin(); it != vec.end(); )
         {
-            if (*it % 2 == 0)
+            if (*it % 2 == 0) {
                 it = vec.erase(it);
-            else
+            }
+            else {
                 ++it;
+            }
         }
 
         print(vec);
@@ -76,7 +78,7 @@ namespace Exercise_STL_Erase_Remove {
 
         print(vec);
 
-        std::vector<int>::iterator pos = std::remove_if(
+        auto pos = std::remove_if(
             vec.begin(),
             vec.end(),
             [](auto elem) { return elem % 2 == 0; }
@@ -87,13 +89,30 @@ namespace Exercise_STL_Erase_Remove {
         print(vec);
     }
 
+    static void testExercise_04()
+    {
+        // again correct implementation, but efficient (good) runtime behaviour
+
+        std::vector<int> vec{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+
+        print(vec);
+
+        // SOLLTE: Remove / Erase Idiom sein
+        auto pos = std::erase_if(
+            vec,
+            [](auto elem) { return elem % 2 == 0; }
+        );
+
+        print(vec);
+    }
+
     // =======================================
     // 2 benchmarks:
     // constexpr std::size_t Max = 20;
     // constexpr std::size_t NumIterations = 1;
 
     constexpr std::size_t Max = 5000;
-    constexpr std::size_t NumIterations = 100;
+    constexpr std::size_t NumIterations = 1000;
 
     static void testExercise_benchmark_01()
     {
@@ -151,14 +170,40 @@ namespace Exercise_STL_Erase_Remove {
         }
     }
 
+    static void testExercise_benchmark_03()
+    {
+        std::vector<int> original(Max);
+
+        std::iota(original.begin(), original.end(), 1);
+
+        ScopedTimer watch{};
+
+        for (std::size_t i{}; i != NumIterations; ++i) {
+
+            // demonstration of a better, (hopefully) efficient implementation
+
+            std::vector<int> vec{ original };
+
+            // print(vec);
+
+            std::erase_if(
+                vec,
+                [](auto elem) { return elem % 2 == 0; }
+            );
+
+            // print(vec);
+        }
+    }
+
     static void testExercise() {
 
         // testExercise_01();  // crashes - by design
-        testExercise_02();
-        testExercise_03();
+        //testExercise_02();
+        //testExercise_03();
 
         testExercise_benchmark_01();
         testExercise_benchmark_02();
+        testExercise_benchmark_03();
     }
 }
 

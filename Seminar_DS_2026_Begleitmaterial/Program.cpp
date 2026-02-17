@@ -11,12 +11,12 @@ extern void test_exercises_constexpr_rgb();        // RGB colors at compile time
 
 int main()
 {
-    test_exercises_smartpointer();
+    //test_exercises_smartpointer();
     test_exercises_stl_erase_remove();
-    test_exercises_phonebook();
-    test_exercises_constexpr_maximum();
-    test_exercises_returning_unique_ptr();
-    test_exercises_constexpr_rgb();
+    //test_exercises_phonebook();
+    //test_exercises_constexpr_maximum();
+    //test_exercises_returning_unique_ptr();
+    //test_exercises_constexpr_rgb();
 }
 
 // =====================================================================================
