@@ -210,7 +210,7 @@ static void test_constexpr_color_04()
 
     constexpr std::uint32_t red = Rgb(255.0, 0.0, 0.0);             // Warning: 'argument': conversion from 'double' to 'const uint8_t', possible loss of data
     constexpr std::uint32_t lightBlue = Rgb('173', '216', '230');   // Warning: 'argument': truncation from 'int' to 'const uint8_t'
-    //constexpr std::uint32_t aqua = Rgb("0", "255", "255");        // Error: cannot convert argument 1 from 'const char [2]' to 'const uint8_t'
+   // constexpr std::uint32_t aqua = Rgb("0", "255", "255");        // Error: cannot convert argument 1 from 'const char [2]' to 'const uint8_t'
     constexpr std::uint32_t darkGreen = Rgb(1000, 5000, 32000);     // Warning:  'argument': truncation from 'int' to 'const uint8_t'
 
     std::cout << std::format("{:#010X}", red) << std::endl;
