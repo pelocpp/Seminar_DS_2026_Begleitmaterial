@@ -9,11 +9,11 @@
 #include <optional>
 #include <string_view>
 
-#pragma warning (push)
-#pragma warning (disable : 4244)
-#pragma warning (disable : 4302)
-#pragma warning (disable : 4305)
-#pragma warning (disable : 4309)
+//#pragma warning (push)
+//#pragma warning (disable : 4244)
+//#pragma warning (disable : 4302)
+//#pragma warning (disable : 4305)
+//#pragma warning (disable : 4309)
 
 // windef.h -- Basic Windows Type Definitions
 typedef unsigned char       BYTE;
@@ -128,7 +128,8 @@ namespace ConstexprRecommendedUsage
         }
 
         // decode a byte
-        static constexpr std::optional<std::uint8_t> byte(std::string_view sv) {
+        static constexpr std::optional<std::uint8_t> byte(std::string_view sv)
+        {
             auto upperNibble = nibble(sv[0]);
             auto lowerNibble = nibble(sv[1]);
 
@@ -272,7 +273,7 @@ static void test_constexpr_color_13()
     std::cout << std::format("{:#010X}", darkGreen.value()) << std::endl;
 }
 
-#pragma warning(pop)
+// #pragma warning(pop)
 
 // =====================================================================================
 
