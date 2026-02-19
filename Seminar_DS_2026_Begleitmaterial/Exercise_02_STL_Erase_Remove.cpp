@@ -198,8 +198,8 @@ namespace Exercise_STL_Erase_Remove {
     static void testExercise() {
 
         // testExercise_01();  // crashes - by design
-        //testExercise_02();
-        //testExercise_03();
+        testExercise_02();
+        testExercise_03();
 
         testExercise_benchmark_01();
         testExercise_benchmark_02();

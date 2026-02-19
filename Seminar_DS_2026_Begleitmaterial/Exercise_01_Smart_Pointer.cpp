@@ -280,6 +280,7 @@ namespace Exercise_Smart_Pointer {
         ms2.print();
 
         ms1 = ms2;    // assignment 
+
         ms1.print();
 
         ms2[0] = '?';
